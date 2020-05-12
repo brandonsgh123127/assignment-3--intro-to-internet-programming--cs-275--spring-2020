@@ -19,42 +19,31 @@ td{
 }
 td.rotations{
   color:blue;
-  animation: rotate-obj 2s linear 1;
+  -webkit-animation: rotate-obj 1s linear 1;
+  -webkit-animation-fill-mode: forwards;
 }
 @keyframes rotate-obj {
-  0%{
-    rotation: 90deg;
-  }
-  100%{
+  to{
     font-size:70px;
-    rotation:180deg;
+    -webkit-transform: rotate(180deg);
   }
 }
 @-webkit-keyframes rotate-obj{
-  0%{
-    rotation: 90deg;
-  }
-  100%{
+  to{
     font-size:70px;
-    rotation:180deg;
+    -webkit-transform: rotate(180deg);
   }
 }
 @-moz-keyframes rotate-obj{
-  0%{
-    rotation: 90deg;
-  }
-  100%{
+  to{
     font-size:70px;
-    rotation:180deg;
+    -webkit-transform: rotate(180deg);
   }
 }
 @-webkit-keyframes rotate-obj{
-  0%{
-    rotation: 90deg;
-  }
-  100%{
-    font-size:70px;
-    rotation:180deg;
+ to{
+   font-size:70px;
+    -webkit-transform: rotate(180deg);
   }
 }
 
