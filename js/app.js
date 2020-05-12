@@ -1,5 +1,4 @@
 let elementArr,primaryElem;
-
 window.onload = () =>{
     elementArr = document.getElementsByTagName(`td`);
     elementArr[0].onclick = () =>{
@@ -17,10 +16,11 @@ window.onload = () =>{
             ccRotate();
             primaryElem=null;
         }
-        // if (elementArr[0].compareDocumentPosition(document.body) & Node.DOCUMENT_POSITION_CONTAINED_BY) {
+        // if (elementArr[0].compareDocumentPosition(document.body)
+        // & Node.DOCUMENT_POSITION_CONTAINED_BY) {
         //
         // }
-    }
+    };
     elementArr[1].onclick = () =>{
         if(primaryElem == null){
             primaryElem=elementArr[1];
@@ -35,7 +35,7 @@ window.onload = () =>{
             ccRotate();
             primaryElem=null;
         }
-    }
+    };
     elementArr[2].onclick = () =>{
         if(primaryElem == null){
             primaryElem=elementArr[2];
@@ -50,7 +50,7 @@ window.onload = () =>{
             ccRotate();
             primaryElem=null;
         }
-    }
+    };
     elementArr[3].onclick = () =>{
         if(primaryElem == null){
             primaryElem=elementArr[3];
@@ -65,17 +65,17 @@ window.onload = () =>{
             ccRotate();
             primaryElem=null;
         }
-    }
-}
+    };
+};
 
 
 function rotate(){
     primaryElem.classList.add(`rotations`);
     try {
-        primaryElem.classList.remove(`cc-rotations`)
+        primaryElem.classList.remove(`cc-rotations`);
     }
     catch(err) {
-        console.log("First-time press");
+        console.log(`First-time press`);
     }
 }
 function ccRotate(){
