@@ -1,12 +1,8 @@
 const {src,dest} = require(`gulp`);
-const {watch} = require(`gulp`);
 const es = require(`gulp-eslint`);
-const browserSync = require(`browser-sync`);
-const reload = browserSync.reload;
 const htmlCompress= require(`gulp-htmlmin`);
 const cssCompress =require(`gulp-cssmin`);
 const babel = require(`gulp-babel`);
-const verCSS=require(`gulp-stylelint`);
 const htmlValidator = require(`gulp-w3c-html-validator`);
 
 
@@ -14,13 +10,13 @@ const htmlValidator = require(`gulp-w3c-html-validator`);
 
 /*Compress Whitespace of HTML*/
 let compressHTML = () => {
-    return src(`html/*.html`).pipe(htmlCompress({
+    return src(`./*.html`).pipe(htmlCompress({
         collapseWhitespace: true}))
         .pipe(dest(`temp/`));
 };
 /*HTML Validator*/
 let validateHTML = () =>{
-    return src(`html/*.html`)
+    return src(`./*.html`)
         .pipe(htmlValidator())
         .pipe(htmlValidator.reporter())
         .pipe(compressHTML());
@@ -39,23 +35,13 @@ let verifyJS = () => {
         }))
         .pipe(dest(`temp/js/`));
 };
-/* Verification of CSS */
-let verifyCSS = () => {
-    return src(`css/*.css`).pipe(verCSS({
-        fix: true,
-        failAfterError: true,
-        reporters: [
-            {formatter: `string`, console: true},
-            {formatter: `json`, save: `report.json`}
-        ]
-    })).pipe(compressCSS());
-};
+
 /*
 Synchronization of modified files...
 Development Track
  */
 let dev = () =>{
-    verifyCode();
+    return verifyCode();
 }
 
 let build = () => {
@@ -70,7 +56,7 @@ let build = () => {
 Function that will call all verification functions
  */
 let verifyCode = () =>{
-    return verifyCSS(),verifyJS(),validateHTML();
+    return compressCSS(),verifyJS(),validateHTML();
 };
 
 exports.default = verifyCode;

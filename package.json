@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/brandonsgh123127/assignment-3--intro-to-internet-programming--cs-275--spring-2020#readme",
   "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-cssmin": "^0.2.0",
