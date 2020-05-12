@@ -1,0 +1,60 @@
+table{
+  width:50%;
+  margin-left:22%;
+  margin-right:22%;
+  text-align:center;
+  padding:15px;
+  border-collapse:collapse;
+}
+td,tr{
+  margin:3px;
+  border:3px solid red;
+}
+td{
+  margin:40px;
+  padding:40px;
+  font-family:Arial;
+  font-size:40px;
+  color:black;
+}
+td.rotations{
+  color:blue;
+  animation: rotate-obj 2s linear 1;
+}
+@keyframes rotate-obj {
+  0%{
+    rotation: 90deg;
+  }
+  100%{
+    font-size:70px;
+    rotation:180deg;
+  }
+}
+@-webkit-keyframes rotate-obj{
+  0%{
+    rotation: 90deg;
+  }
+  100%{
+    font-size:70px;
+    rotation:180deg;
+  }
+}
+@-moz-keyframes rotate-obj{
+  0%{
+    rotation: 90deg;
+  }
+  100%{
+    font-size:70px;
+    rotation:180deg;
+  }
+}
+@-webkit-keyframes rotate-obj{
+  0%{
+    rotation: 90deg;
+  }
+  100%{
+    font-size:70px;
+    rotation:180deg;
+  }
+}
+
